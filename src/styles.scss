@@ -1,1 +1,107 @@
 /* You can add global styles to this file, and also import other style files */
+/* Add application styles & imports to this file! */
+:root {
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --indigo-blue: oklch(51.64% 0.229 281.65);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-pink: oklch(59.91% 0.239 8.14);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+}
+
+counter {
+  display: block;
+  cursor: pointer;
+  border: 1px solid;
+  border-image: var(--red-to-pink-to-purple-horizontal-gradient) 1;
+  padding: 12px;
+  margin: 12px 0;
+  user-select: none;
+}
+counter:hover {
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+}
+
+header {
+  text-align: center;
+  font-size: 16pt;
+  font-weight: bold;
+  padding: 8px;
+  margin-bottom: 8px;
+  color: white;
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.twitter {
+  display: block;
+  margin-top: 8px;
+
+  font-size: 0.8em;
+
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+hr {
+  border-radius: 8px;
+  height: 8px;
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+  border: none;
+}
+
+app-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid red;
+  overflow: hidden;
+}
+
+.header {
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+  color: white;
+  padding: 8px;
+  text-align: center;
+}
+
+.content {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  text-align: center;
+  color: white;
+  background: var(--red-to-pink-to-purple-horizontal-gradient);
+}
+
+h2 {
+  margin: 32px 0 2px;
+}
+
+main {
+  display: grid;
+  grid-row: auto auto;
+  grid-template-columns: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+

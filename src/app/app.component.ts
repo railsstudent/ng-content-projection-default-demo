@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [],
+  template: `
+    <div>
+      <h1>Content Projection Fallback</h1>
+
+    </div>
+  `,
+  styles: '',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  title = 'ng-content-projection-default-demo';
+  version = VERSION.full;
 }
