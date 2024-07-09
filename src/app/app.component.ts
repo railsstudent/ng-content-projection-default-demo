@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component, VERSION } from '@angular/core';
 import { AppCardComponent } from './app-card.component';
+import { AppPricingListComponent } from './app-price-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [AppCardComponent],
+  imports: [AppCardComponent, AppPricingListComponent],
   template: `
     <header>Angular {{version}} - Content Projection fallback </header>
     <main>
@@ -12,34 +13,8 @@ import { AppCardComponent } from './app-card.component';
         <h2>Fallback content</h2>
         <app-card />
       </section>
-
-      <section>
-        <h2>Custom Content</h2>
-        <app-card>
-          <div header>Start-up</div>
-          <ul>
-            <li>USD 10/month</li>
-            <li>3 Licenses</li>
-            <li>1GB Storage</li>
-            <li>Email Technical Support</li>
-          </ul>
-        </app-card>
-      </section>
-
-      <section>
-        <h2>Custom Content</h2>
-        <app-card>
-          <div header>Company</div>
-          <ul>
-            <li>USD 100/month</li>
-            <li>50 Licenses</li>
-            <li>20GB Storage</li>
-            <li>Email and Phone Technical Support</li>
-            <li>95% Uptime</li>
-          </ul>
-        </app-card>
-      </section>
-
+      <app-price-list tier="Start-up" [features]="startUpFeatures" />
+      <app-price-list tier="Company" [features]="companyFeatures" />
       <section>
         <h2>Custom Content</h2>
         <app-card>
@@ -57,9 +32,23 @@ import { AppCardComponent } from './app-card.component';
       </section>
     </main>
   `,
-  styles: '',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   version = VERSION.full;
+
+  startUpFeatures = [
+    'USD 10/month',
+    '3 Licenses',
+    '1GB Storage',
+    'Email Technical Support',
+  ];
+
+  companyFeatures = [
+    'USD 100/month',
+    '50 Licenses',
+    '20GB Storage',
+    'Email and Phone Technical Support',
+    '95% Uptime'
+  ];
 }
